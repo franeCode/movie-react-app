@@ -1,3 +1,17 @@
+/* navbar */
+
+.container-fluid {
+    position: relative;
+}
+.search-icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 5rem;
+}
+.search-input {
+    border-radius: 9999px;
+}
+
 .hero-container {
     position: relative;
     z-index: 100;
