@@ -7,10 +7,6 @@ const SearchView = ({ keyword }) => {
   
   const title = `You are searching for ${keyword}`;
 
-  // const resultsHtml = searchResults.map((obj, i) => {
-  //   return <MovieCard movie={obj} key={i} />
-  // })
-
   return (
     <>
       <Hero text={title} />
