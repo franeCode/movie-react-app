@@ -1,7 +1,9 @@
 import { useHistory, Link } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = ({ searchText, setSearchText }) => {
   const history = useHistory()
+  const [toggle, setToggle] = useState(false);
 
   const updateSearchText = (e) => {
     e.preventDefault();
@@ -49,6 +51,11 @@ const Navbar = ({ searchText, setSearchText }) => {
               </Link>
             </li>
           </ul>
+          {/* TODO: add search icon and toggle search bar */}
+          <button onClick={() => setToggle(!toggle)}>
+            <img src="./images/search-icon.svg" alt="search-icon" />
+          </button>
+          {toggle && (
           <form className="d-flex">
             <input
               className="form-control me-2"
@@ -62,6 +69,7 @@ const Navbar = ({ searchText, setSearchText }) => {
               Search
             </button>
           </form>
+          )}
         </div>
       </div>
     </nav>
