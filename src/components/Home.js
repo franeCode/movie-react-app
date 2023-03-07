@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <>
       <Hero text="Welcome to React 201" />
-      {/* TODO: make reusable text */}
-      <div>Discover</div> 
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
+      {/* TODO: make reusable text */}
+      {/* <div>Discover</div>  */}
       {searchResults && 
       <MovieList searchResults={searchResults} />
       }

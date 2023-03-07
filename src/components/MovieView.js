@@ -1,6 +1,7 @@
 import Hero from "./Hero";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import noImage from "./image-not-found.jpeg"
 
 const MovieView = () => {
   const { id } = useParams();
@@ -26,6 +27,7 @@ const MovieView = () => {
       // TODO: Deal with a possible missing image
       const posterPath = `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`;
       const backdropUrl = `https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`
+
       return (
         <>
           <Hero text={movieDetails.original_title} backdrop={backdropUrl} />
@@ -33,8 +35,8 @@ const MovieView = () => {
             <div className="row">
               <div className="col-md-3">
                 <img
-                  src={posterPath}
-                  alt="..."
+                  src={posterPath ? posterPath : noImage}
+                  alt="no-image"
                   className="img-fluid shadow rounded"
                 />
               </div>

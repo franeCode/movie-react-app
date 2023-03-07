@@ -1,9 +1,12 @@
 import { useHistory, Link } from "react-router-dom";
 import { useState } from "react";
+import image from "./search-icon.svg";
 
 const Navbar = ({ searchText, setSearchText }) => {
   const history = useHistory()
   const [toggle, setToggle] = useState(false);
+
+  // const image = require('./search-icon.svg');
 
   const updateSearchText = (e) => {
     e.preventDefault();
@@ -47,29 +50,30 @@ const Navbar = ({ searchText, setSearchText }) => {
                 tabIndex="-1"
                 aria-disabled="true"
               >
-                Coming soon
+                My List
               </Link>
             </li>
           </ul>
           {/* TODO: add search icon and toggle search bar */}
-          <button onClick={() => setToggle(!toggle)}>
-            <img src="./images/search-icon.svg" alt="search-icon" />
-          </button>
+          <div className="search-icon" onClick={() => setToggle(!toggle)}>
+            <img src={image} alt="search-icon" />
+          </div>
           {toggle && (
           <form className="d-flex">
             <input
-              className="form-control me-2"
+              className="search-input form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
               value={searchText}
               onChange={updateSearchText}
             />
-            <button onClick={updateSearchText} className="btn btn-outline-success" type="submit">
+            {/* <button onClick={updateSearchText} className="btn btn-outline-success" type="submit">
               Search
-            </button>
+            </button> */}
           </form>
           )}
+          <button>Login</button>
         </div>
       </div>
     </nav>
