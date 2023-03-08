@@ -50,7 +50,7 @@ const Navbar = ({ searchText, setSearchText }) => {
                 tabIndex="-1"
                 aria-disabled="true"
               >
-                My List
+                Watchlist
               </Link>
             </li>
           </ul>

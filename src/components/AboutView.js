@@ -1,6 +1,8 @@
 import Hero from "./Hero";
+import useFetch from "./useFetch";
 
 const AboutView = () => {
+  
   return (
     <>
       <Hero text="About us" />
