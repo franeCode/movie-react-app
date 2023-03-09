@@ -2,11 +2,14 @@ import Hero from "./Hero";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import noImage from "./image-not-found.jpeg"
+import Spinner from "./Spinner";
+import useFetch from "./useFetch";
 
 const MovieView = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
+  const { isPending } = useFetch();
 
   useEffect(() => {
     fetch(
@@ -15,13 +18,13 @@ const MovieView = () => {
       .then(response => response.json())
       .then(data => {
         setMovieDetails(data);
-        setIsLoading(false);
+        // setIsLoading(false);
       });
   }, [id]);
 
   function renderMovieDetails() {
-    if (isLoading) {
-      return <Hero text="Loading..." />;
+    if (isPending) {
+      return <div className="pos-spinner"><Spinner /></div>;
     }
     if (movieDetails) {
       // TODO: Deal with a possible missing image
