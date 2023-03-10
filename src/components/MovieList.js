@@ -5,7 +5,7 @@ const MovieList = ({ searchResults }) => {
 
   const listResults = searchResults.map((obj, i) => {
     return <MovieCard movie={obj} key={i} />
-  })
+  })  
 
   return (
     <>
