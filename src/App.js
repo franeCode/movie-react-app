@@ -7,10 +7,14 @@ import SearchView from './components/SearchView';
 import MovieView from './components/MovieView';
 import { Switch, Route } from "react-router-dom";
 import NotFound from './components/NotFound';
+import Favorite from './components/Favorite';
+import MovieList from './components/MovieList';
 
 function App() {
+
   const [searchResults, setSearchResults] = useState([]);
   const [searchText, setSearchText] = useState('');
+  const [favorite, setFavorite] = useState([]);
 
   return (
     <div>
@@ -26,6 +30,9 @@ function App() {
         <Route path="/movies/:id" component={MovieView} />
         <Route path="*">
           <NotFound />
+        </Route>
+        <Route>
+          <MovieList favorite={favorite} favoriteMovies={Favorite} setFavorite={setFavorite} />
         </Route>
       </Switch>
     </div>
