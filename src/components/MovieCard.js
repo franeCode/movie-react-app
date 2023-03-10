@@ -3,6 +3,7 @@ import starImg from './star-icon.svg';
 import noImage from './image-not-found.jpeg';
 import { useState } from 'react';
 import plusIcon from './plus-icon.svg';
+import Favorite from './Favorite';
 
 const MovieCard = ({ movie }) => {
     const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
@@ -24,9 +25,9 @@ const MovieCard = ({ movie }) => {
                 <img className='icon' src={starImg} alt="star-icon" />
                 {movie.vote_average}/10
               </p>
-              <button className='card-info card-btn'>
-                <img className='icon' src={plusIcon} alt="plus-icon" />
-                Watchlist</button>
+              <div className='card-info card-btn'>
+                <Favorite />
+                </div>
             </div>
           </div>
         {/* </div> */}
