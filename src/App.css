@@ -43,8 +43,8 @@
   }
   
   .loader {
-    border: 0.5rem solid #f3f3f3;
-    border-top: 0.5rem solid #3a3c3d;
+    border: 0.3rem solid #f3f3f3;
+    border-top: 0.1rem solid #3a3c3d;
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -95,7 +95,7 @@
     align-items: center;
     margin: 0%;
 }
-.card-btn {
+.add-btn {
     width: 6rem;
     height: 2.5rem;
     border: none;
