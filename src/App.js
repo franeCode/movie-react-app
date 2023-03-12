@@ -12,27 +12,32 @@ import MovieList from './components/MovieList';
 
 function App() {
 
-  const [searchResults, setSearchResults] = useState([]);
+  const [results, setResults] = useState([]);
   const [searchText, setSearchText] = useState('');
-  const [favorite, setFavorite] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
+  function addFavorite(movie){
+    setFavorites([...favorites, movie]);
+  }
   return (
     <div>
       <Navbar searchText={searchText} setSearchText={setSearchText} />
       <Switch>
+        
         <Route path="/" exact>
-          <Home />
+          <SearchView keyword={searchText} addFavorite={addFavorite} />
         </Route>
         <Route path="/about" component={AboutView} />
-        <Route path="/search">
-          <SearchView keyword={searchText} searchResults={searchResults} />
-        </Route>
-        <Route path="/movies/:id" component={MovieView} />
-        <Route path="*">
-          <NotFound />
+        <Route path="/movies/:id" results={results} component={MovieView} />
+        
+        <Route path="/watchlist" >
+        <MovieList searchResults={favorites} />
         </Route>
         <Route>
-          <MovieList favorite={favorite} favoriteMovies={Favorite} setFavorite={setFavorite} />
+          <MovieList favorites={favorites} setFavorites={setFavorites} />
+        </Route>
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
     </div>
