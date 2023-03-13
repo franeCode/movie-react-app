@@ -1,7 +1,7 @@
 import Hero from "./Hero";
 import MovieList from "./MovieList";
 import useFetch from "./useFetch";
-import Home from "./Home";
+// import Home from "./Home";
 
 const SearchView = ({ keyword, addFavorite }) => {
   const homeURL = 'https://api.themoviedb.org/3/discover/movie?api_key=ab166ff82684910ae3565621aea04d62';
