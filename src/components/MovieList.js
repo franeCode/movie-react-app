@@ -1,10 +1,12 @@
 import MovieCard from "./MovieCard";
 
 
-const MovieList = ({ searchResults }) => {
+const MovieList = ({ searchResults, addFavorite}) => {
+
+  
 
   const listResults = searchResults.map((obj, i) => {
-    return <MovieCard movie={obj} key={i} />
+    return <MovieCard movie={obj} key={i} addFavorite={addFavorite} />
   })  
 
   return (

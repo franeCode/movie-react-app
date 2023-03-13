@@ -45,10 +45,8 @@ const Navbar = ({ searchText, setSearchText }) => {
             </li>
             <li className="nav-item">
               <Link
-                className="nav-link disabled"
-                to="/"
-                tabIndex="-1"
-                aria-disabled="true"
+                className="nav-link"
+                to="/watchlist"
               >
                 Watchlist
               </Link>

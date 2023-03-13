@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import starImg from './star-icon.svg';
-import noImage from './image-not-found.jpeg';
-import { useState } from 'react';
-import plusIcon from './plus-icon.svg';
+import starImg from '../assets/star-icon2.svg';
+import noImage from '../assets/image-not-found.jpeg';
+// import { useState } from 'react';
+// import plusIcon from '../assets/plus-icon.svg';
 import Favorite from './Favorite';
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, addFavorite }) => {
     const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
     const detailUrl = `/movies/${movie.id}`;
     // // const defaultImg = require('assets/img/image-not-found.jpeg');
@@ -16,7 +16,7 @@ const MovieCard = ({ movie }) => {
         
         <div className="movie-card">
         <Link to={detailUrl}>
-          <img src={posterUrl} className="card-img" alt={movie.original_title} />
+          <img src={movie.poster_path ? posterUrl : noImage} className="card-img" alt={movie.original_title} />
           </Link>
           {/* <div className="card-body"> */}
             <h5 className="card-title">{movie.original_title}</h5>
@@ -25,7 +25,7 @@ const MovieCard = ({ movie }) => {
                 <img className='icon' src={starImg} alt="star-icon" />
                 {movie.vote_average}/10
               </p>
-              <div className='card-info card-btn'>
+              <div onClick={() => addFavorite(movie)} className='card-info card-btn'>
                 <Favorite />
                 </div>
             </div>
