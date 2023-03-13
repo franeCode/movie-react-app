@@ -1,4 +1,4 @@
-import plusIcon from './plus-icon.svg';
+import plusIcon from '../assets/plus-icon.svg';
 
 const Favorite = () => {
 
