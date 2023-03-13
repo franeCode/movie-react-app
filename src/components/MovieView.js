@@ -1,7 +1,7 @@
 import Hero from "./Hero";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import noImage from "./image-not-found.jpeg"
+import noImage from "../assets/image-not-found.jpeg"
 import Spinner from "./Spinner";
 import useFetch from "./useFetch";
 
