@@ -1,6 +1,6 @@
 import { useHistory, Link } from "react-router-dom";
 import { useState } from "react";
-import image from "./search-icon.svg";
+import image from "../assets/search-icon.svg";
 
 const Navbar = ({ searchText, setSearchText }) => {
   const history = useHistory()
